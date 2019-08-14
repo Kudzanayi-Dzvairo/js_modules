@@ -15,3 +15,10 @@ let value = square(3)
 let otherValue = square(10)
 
 console.log(value, otherValue)
+
+let convertFarenheitToCelcius = function(num) {
+    let celcius = ((num - 32) * 5) / 9
+    console.log(celcius)
+}
+
+convertFarenheitToCelcius(68)
