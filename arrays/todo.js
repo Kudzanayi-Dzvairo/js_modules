@@ -1,29 +1,69 @@
-const todo = [
-    'take a shit',
-    'shower',
-    'shave',
-    'whip it like a slave',
-    'whip whip it like a slave',
+const todos = [
+    {
+        text: 'Order cat food',
+        completed: false,
+    },
+    {
+        text: 'Clean kitchen',
+        completed: true,
+    },
+    {
+        text: 'Buy food',
+        completed: true,
+    },
+    {
+        text: 'Do work',
+        completed: false,
+    },
+    {
+        text: 'Exercise',
+        completed: true,
+    },
 ]
 
-
-// todo.splice(2,1)
-todo.push('take a piss and wash my hands')
-todo.push('take a knee and thanks the man')
-todo.push('then get back to the money')
-// todo.shift()
-
-todo.forEach(function(item, index ){
-    console.log(`${index +1}. ${item}`)
-})
-
-// console.log(todo.length)
-// console.log(`You have ${todo.length} todos!`)
-// console.log(todo)
-// console.log(todo[todo.length-2] )
-
-for(let count = 0; count < todo, count ++){
-    const num = count + 1
-    const todo = todo[count]
-    console.log(`${num} ${todo}`)
+const sortTodos = function(todos) {
+    todos.sort(function(a, b) {
+        if (!a.completed && b.completed) {
+            return -1
+        } else if (!b.completed && a.completed) {
+            return 1
+        } else {
+            return 0
+        }
+    })
 }
+
+// const deleteTodo = function(todos, todoText) {
+//     const index = todos.findIndex(function(todo) {
+//         return todo.text.toLowerCase() === todoText.toLowerCase()
+//     })
+
+//     if (index > -1) {
+//         todos.splice(index, 1)
+//     }
+// }
+
+const deleteTodo = function(todo, todoText) {
+    const Index = todo.findIndex(function(todo) {
+        return todo.text.toLowerCase() === todoText.ToLowerCase()
+    })
+
+    if (index > -1) {
+        todos.splice(index, 1)
+    }
+}
+
+const getThingsToDo = function(todos) {
+    return todos.filter(function(todo) {
+        return !todo.completed
+    })
+}
+
+// const getThingsToDo = function(todos) {
+//     return todos.filter(function(todo) {
+//         return !todo.completed
+//     })
+// }
+
+sortTodos(todos)
+console.log(todos)
